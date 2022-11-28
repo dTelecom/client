@@ -1,0 +1,9 @@
+gopath/
+main
+pkg/
+sqlite3gorm.db
+frontend/.cache/
+frontend/dist/
+frontend/node_modules/
+.idea
+.DS_store
