@@ -336,9 +336,10 @@ func getNodeURL() (string, error) {
 	json.Unmarshal(viewResult.Result, &getNodesResult)
 
 	// randomIndex := rand.Intn(len(getNodesResult))
-
 	// return getNodesResult[randomIndex].Address, nil
-	return "wss://de.dmeet.org/ws", nil
+	nodes := [2]string{"wss://de.dmeet.org/ws", "wss://uk.dmeet.org/ws"}
+	randomIndex := rand.Intn(len(nodes))
+	return nodes[randomIndex], nil
 }
 
 func getEpochHeight() (uint64, error) {
