@@ -306,7 +306,7 @@ type GetNodesResult struct {
 
 func getNodeURL() (string, error) {
 	node := ""
-	keyPair, err := key.NewBase58KeyPair(os.Getenv("NEAR_PK"))
+	keyPair, err := key.NewBase58KeyPair(os.Getenv("NEAR_PK_CLIENT"))
 	if err != nil {
 		return node, fmt.Errorf("key error: %w", err)
 	}
@@ -345,7 +345,7 @@ func getNodeURL() (string, error) {
 func getEpochHeight() (uint64, error) {
 	var height uint64 = 0
 
-	keyPair, err := key.NewBase58KeyPair(os.Getenv("NEAR_PK"))
+	keyPair, err := key.NewBase58KeyPair(os.Getenv("NEAR_PK_CLIENT"))
 	if err != nil {
 		return height, fmt.Errorf("key error: %w", err)
 	}
@@ -378,7 +378,7 @@ func getEpochHeight() (uint64, error) {
 
 func getConferenceData(sid string, uid string, callID string) (string, string, error) {
 
-	keyPair, err := key.NewBase58KeyPair(os.Getenv("NEAR_PK"))
+	keyPair, err := key.NewBase58KeyPair(os.Getenv("NEAR_PK_CLIENT"))
 	if err != nil {
 		return "", "", fmt.Errorf("key error: %w", err)
 	}
@@ -400,7 +400,7 @@ func getConferenceData(sid string, uid string, callID string) (string, string, e
 
 func getConfirmationSignature(callID string, duration string, epoch uint64) (string, error) {
 
-	keyPair, err := key.NewBase58KeyPair(os.Getenv("NEAR_PK"))
+	keyPair, err := key.NewBase58KeyPair(os.Getenv("NEAR_PK_CLIENT"))
 	if err != nil {
 		return "", fmt.Errorf("key error: %w", err)
 	}
