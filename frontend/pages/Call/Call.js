@@ -141,9 +141,9 @@ const Call = () => {
 
   const start = async () => {
     try {
-      let url = `https://nmeet.org/api/participant/create/${name}`;
+      let url = `https://meet.dmeet.org/api/participant/create/${name}`;
       if (sid !== undefined) {
-        url = `https://nmeet.org/api/participant/join/${sid}/${name}`;
+        url = `https://meet.dmeet.org/api/participant/join/${sid}/${name}`;
       }
       const response = await axios.post(url);
       const parsedSID = JSON.parse(response.data.sid).sid
@@ -173,7 +173,7 @@ const Call = () => {
       clientLocal.current.ontrack = (track, stream) => {
         console.log('got track', track, 'for stream', stream);
 
-        axios.get('https://nmeet.org/api/participants?sid=' + parsedSID).then((response) => {
+        axios.get('https://meet.dmeet.org/api/participants?sid=' + parsedSID).then((response) => {
           console.log('Users:', response.data)
           setParticipants(response.data.map(participant => !participant.streamID ? {
             ...participant,

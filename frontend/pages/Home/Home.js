@@ -43,7 +43,7 @@ const Home = ({isJoin}) => {
   }, [])
 
   const loadParticipants = async () => {
-    axios.get('https://nmeet.org/api/participants?sid=' + sid).then((response) => {
+    axios.get('https://meet.dmeet.org/api/participants?sid=' + sid).then((response) => {
       setParticipants(response.data);
     }).catch(console.error);
   }
