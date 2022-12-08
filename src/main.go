@@ -23,7 +23,7 @@ import (
 )
 
 // CallBackURL str
-var CallBackURL = "https://nmeet.org"
+var CallBackURL = "https://meet.dmeet.org"
 
 // AccountID - TODO: env
 var AccountID = "nmeet.near"
@@ -335,9 +335,10 @@ func getNodeURL() (string, error) {
 	var getNodesResult []GetNodesResult
 	json.Unmarshal(viewResult.Result, &getNodesResult)
 
-	randomIndex := rand.Intn(len(getNodesResult))
+	// randomIndex := rand.Intn(len(getNodesResult))
 
-	return getNodesResult[randomIndex].Address, nil
+	// return getNodesResult[randomIndex].Address, nil
+	return "wss://de.dmeet.org/ws", nil
 }
 
 func getEpochHeight() (uint64, error) {
